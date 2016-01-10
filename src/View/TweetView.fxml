@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="tweetContainer" minWidth="365"  maxWidth="375"  fx:controller="View.TweetController">
+  <top>
+    <VBox alignment="CENTER">
+      <Label text="TWEET PEEK"></Label>
+      <Separator maxWidth="200">
+        <VBox.margin><Insets bottom="5"></Insets></VBox.margin>
+      </Separator>
+      <HBox alignment="CENTER">
+        <fx:define>
+          <ToggleGroup fx:id="twitterToggle"/>
+        </fx:define>
+        <ToggleButton text="Timeline" fx:id="timelineBtn" onAction="#showTimeline" toggleGroup="$twitterToggle"></ToggleButton>
+        <ToggleButton text="Profile" fx:id="profileBtn" onAction="#showProfile" toggleGroup="$twitterToggle"></ToggleButton>
+        <ToggleButton text="Settings" fx:id="settingsBtn" onAction="#showSettings" toggleGroup="$twitterToggle"></ToggleButton>
+      </HBox>
+      <Separator maxWidth="200">
+        <VBox.margin><Insets top="5"></Insets></VBox.margin>
+      </Separator>
+    </VBox>
+  </top>
+  <center>
+    <ScrollPane fx:id="scrollPane" id="noBackground">
+    </ScrollPane>
+  </center>
+  <bottom>
+    <VBox alignment="CENTER_RIGHT" >
+      <TextArea promptText="Enter Tweet" fx:id="commentBox" maxHeight="50"  minWidth="125" maxWidth="300" >
+        <VBox.margin>
+          <Insets top="5" bottom="5" right="15"></Insets>
+        </VBox.margin>
+      </TextArea>
+      <Button fx:id="tweetBtn" text="TWEET" minWidth="85" minHeight="30" onAction="#postTweet">
+        <VBox.margin>
+          <Insets right="15" bottom="5"></Insets>
+        </VBox.margin>
+      </Button>
+    </VBox> 
+  </bottom>
+</BorderPane>

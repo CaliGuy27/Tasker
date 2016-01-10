@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:id="signUpContainer" alignment="CENTER" prefHeight="350.0" prefWidth="470.0"  xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="Login.SignUpController">
+  <Label text="Create Account"></Label>
+  <TextField fx:id="firstNameTF" promptText="First Name" maxWidth="225">
+    <VBox.margin>
+      <Insets>
+        <bottom>5</bottom>
+      </Insets>
+    </VBox.margin>
+  </TextField>    
+  <TextField fx:id="lastNameTF" promptText="Last Name" maxWidth="225">
+    <VBox.margin>
+      <Insets>
+        <bottom>5</bottom>
+      </Insets>
+    </VBox.margin>
+  </TextField>
+  <!--______________________BEGIN - EMAIL WARNING SECTION-->
+  <VBox fx:id="emailCautionArea">
+    <VBox.margin>
+      <Insets>
+        <bottom>5</bottom>
+      </Insets>
+    </VBox.margin>
+  </VBox>
+  <!--______________________END - EMAIL WARNING SECTION-->    
+  <TextField fx:id="emailTF" promptText="Email" maxWidth="225">
+    <VBox.margin>
+      <Insets>
+        <bottom>5</bottom>
+      </Insets>
+    </VBox.margin>
+  </TextField>
+  <!--______________________BEGIN - PASSWORD WARNING SECTION-->
+  <VBox fx:id="passCautionArea">
+    <VBox.margin>
+      <Insets>
+        <bottom>5</bottom>
+      </Insets>
+    </VBox.margin>
+  </VBox>
+  <!--______________________END - PASSWORD WARNING SECTION-->
+  <PasswordField fx:id="passwordTF" promptText="Password" maxWidth="225">
+    <VBox.margin>
+      <Insets>
+        <bottom>10</bottom>
+      </Insets>
+    </VBox.margin>
+  </PasswordField> 
+  <PasswordField fx:id="confirmPasswordTF" promptText="Confirm Password" maxWidth="225">
+    <VBox.margin>
+      <Insets>
+        <bottom>10</bottom>
+      </Insets>
+    </VBox.margin>
+  </PasswordField> 
+  <HBox alignment="CENTER">
+    <fx:define>
+      <ToggleGroup fx:id="positionGroup"/>
+    </fx:define>
+    <RadioButton fx:id="deRadioBtn" text="Design Engineer" toggleGroup="$positionGroup" >
+      <HBox.margin>
+        <Insets>
+          <right>5</right>
+        </Insets>
+      </HBox.margin>
+    </RadioButton>
+    <RadioButton fx:id="sweRadioBtn" text="Software Engineer" toggleGroup="$positionGroup"></RadioButton>
+  </HBox>
+  <Button fx:id="createAccountBtn" text="Create Account" onAction="#addAccount" maxWidth="225">
+    <VBox.margin>
+      <Insets>
+        <top>10</top>
+      </Insets>
+    </VBox.margin>
+  </Button>
+     
+</VBox>

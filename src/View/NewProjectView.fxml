@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox fx:id="container" prefHeight="400.0" prefWidth="400.0" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.NewProjectController">
+  <stylesheets>
+    <URL value="@/Login/splash.css"/>
+  </stylesheets>
+  <VBox maxWidth="300">
+    <!--_______________________________Project Section__________________________-->
+    <VBox alignment="CENTER">
+      <Label text="New Project"></Label>
+      <TextField fx:id="pNameTF" promptText="Project Name" maxWidth="170" ></TextField>
+      <TextField fx:id="pNumberTF" promptText="Project Number" maxWidth="170" >
+        <VBox.margin>
+          <Insets>
+            <top>5</top>
+          </Insets>
+        </VBox.margin>
+      </TextField>
+    </VBox>
+    <!--_______________________________End Project Section__________________________-->
+    <Separator>
+      <VBox.margin>
+        <Insets>
+          <top>10</top>
+          <bottom>5</bottom>
+        </Insets>
+      </VBox.margin>
+    </Separator>
+    <!--_______________________________Employees Section__________________________-->
+    <Label text="Who is working on this project?">
+      <VBox.margin>
+        <Insets>
+          <bottom>5</bottom>
+        </Insets>
+      </VBox.margin>
+    </Label>
+    <HBox alignment="CENTER">
+      <VBox alignment="CENTER">
+        <HBox.margin>
+          <Insets>
+            <left>10</left>
+            <right>10</right>
+          </Insets>
+        </HBox.margin>
+        <Label text="Design Engineer"></Label>
+        <ComboBox fx:id="dEngineerCB" minWidth="100"></ComboBox>
+      </VBox>
+      <VBox alignment="CENTER">
+        <Label text="Software Engineer"></Label>
+        <ComboBox fx:id="sEngineerCB" minWidth="100"></ComboBox>
+      </VBox >
+    </HBox>
+    <!--__________________________End Employees Section_________________________-->
+    <Separator>
+      <VBox.margin>
+        <Insets>
+          <top>10</top>
+          <bottom>5</bottom>
+        </Insets>
+      </VBox.margin>
+    </Separator>
+    <!--_______________________________Design Section_____________________________-->
+    <Label text="What is the status of the Design?"></Label>
+    <HBox>
+      <TextField fx:id="scheduleStatusTF" promptText="Scehdule Percentage"></TextField>
+      <TextField fx:id="drawingStatusTF" promptText="Control Drawings Percentage"></TextField>
+      <TextField fx:id="manualStatusTF" promptText="Manual Percentage"></TextField>
+    </HBox>
+    <!--__________________________End Design Section__________________________-->
+    <Separator>
+      <VBox.margin>
+        <Insets>
+          <top>10</top>
+          <bottom>5</bottom>
+        </Insets>
+      </VBox.margin>
+    </Separator>
+    <!--__________________________Software Section______________________________-->
+    <Label text="What is the status of the Software?"></Label>
+    <HBox>
+      <TextField fx:id="databaseStatusTF" promptText="Database"></TextField>
+      <TextField fx:id="graphicsStatusTF" promptText="Graphics"></TextField>
+      <TextField fx:id="programStatusTF" promptText="Programming"></TextField>
+    </HBox>
+    <!--__________________________End Spftware Section_________________________-->
+  </VBox>
+  <Button text="Create Project" minWidth="200" onAction="#createProject">
+    <VBox.margin>
+      <Insets>
+        <top>10</top>
+      </Insets>
+    </VBox.margin>
+  </Button>
+</VBox>

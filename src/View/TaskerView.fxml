@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane  xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="200" 
+            prefWidth="320" fx:controller="View.TaskerController">
+  <!--_______________________MenuBar_________________________________________-->
+  <top>
+    <VBox>
+      <MenuBar>
+        <Menu text="File">
+          <MenuItem text="Sign Out" onAction="#showLogin"></MenuItem>
+        </Menu>
+        <Menu text="Social" fx:id="socialMenu">
+          <Menu text="Twitter">
+            <MenuItem text="Sign In" onAction="#signInToTwitter"></MenuItem>
+            <SeparatorMenuItem></SeparatorMenuItem>
+            <fx:define>
+              <ToggleGroup fx:id="twitterGroup"/>
+            </fx:define>
+            <RadioMenuItem text="Show" onAction="#openTweetTab" toggleGroup="$twitterGroup"></RadioMenuItem>
+            <RadioMenuItem text="Hide" onAction="#minimizeTweetTab" toggleGroup="$twitterGroup" ></RadioMenuItem>
+          </Menu>
+          <Menu text="Facebook">
+            <MenuItem text="Sign In"></MenuItem>
+            <SeparatorMenuItem></SeparatorMenuItem>
+            <fx:define>
+              <ToggleGroup fx:id="facebookGroup"/>
+            </fx:define>
+            <RadioMenuItem text="Show" toggleGroup="$facebookGroup"></RadioMenuItem>
+            <RadioMenuItem text="Hide" toggleGroup="$facebookGroup" ></RadioMenuItem>
+          </Menu>
+        </Menu>
+        <Menu text="Settings">
+          <MenuItem text="Account"></MenuItem>
+        </Menu>
+      </MenuBar>
+      <!--______________________________End Menu Bar_____________________________-->
+      <AnchorPane>
+        <VBox alignment="CENTER" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="15" maxWidth="100" >
+          <Label fx:id="fullNameLabel" text=""></Label>
+          <Label fx:id="positionLabel" text=""></Label>
+        </VBox>
+      </AnchorPane>
+    </VBox>
+  </top>
+</BorderPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="parent" maxHeight="320.0" maxWidth="300.0"  
+      styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.SignInController">
+  
+  <VBox fx:id="signIn" id="signIn" alignment="TOP_CENTER" >
+    
+    <Label text="Tasker" styleClass="header"></Label>
+    <VBox styleClass="blackRoundedBorder" alignment="CENTER" maxWidth="190" >
+      <VBox.margin>
+        <Insets>
+          <bottom>10</bottom>
+        </Insets>
+      </VBox.margin>
+      <TextField fx:id="emailTF" promptText="Email" maxWidth="190" id="topTextField"></TextField>
+      <PasswordField fx:id="passwordTF" promptText="Password" maxWidth="190" id="bottomTextField"></PasswordField>
+    </VBox>
+    <Button text="Sign In" fx:id="signInBtn" onAction="#signIn" minWidth="190" styleClass="blackRoundedBorder, whiteRoundedBackground">
+      <VBox.margin>
+        <Insets>
+          <bottom>10</bottom>
+        </Insets>
+      </VBox.margin>
+    </Button>
+    <Button text="Forgot Password?" minWidth="190" styleClass="blackRoundedBorder">
+      <VBox.margin>
+        <Insets>
+          <bottom>10</bottom>
+        </Insets>
+      </VBox.margin>
+    </Button>
+  </VBox>
+  
+  <VBox fx:id="signUp" id="signUp" minHeight="100"  alignment="CENTER">
+    <Label text="Don't have an account?">
+      <VBox.margin>
+        <Insets>
+          <top>25</top>
+          <bottom>10</bottom>
+        </Insets>
+      </VBox.margin>
+    </Label>
+    <Button text="Sign Up" onAction="#showSignUp" minWidth="190" styleClass="blackRoundedBorder, greenRoundedBackground"></Button>
+  </VBox>
+  
+</VBox>
