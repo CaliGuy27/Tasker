@@ -6,7 +6,7 @@ What I want to get out of this project is learning to code with consistency, use
 Along the way the code may get jumbled, be bloated, or be done in a manner that could be expanded upon. The intent is to track this
 and learn from it.
 
-This project will be used in conjuction with a Raspberry Pi to send/recieve data rom the client application.
+This project will be used in conjuction with a Raspberry Pi to send/recieve data from the client application.
 
 Language: Java
 Toolkit/Platform: JavaFX 8
