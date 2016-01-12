@@ -20,15 +20,13 @@ public class Tasker extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     
-    Parent root= FXMLLoader.load(getClass().getResource("/View/TaskerView.fxml"));   
-    
+    Parent root= FXMLLoader.load(getClass().getResource("/View/TaskerView.fxml"));
     
     Scene scene = new Scene(root);
     scene.getStylesheets().add("/Login/splash.css");
     
     stage.setScene(scene);
     stage.setMaximized(true);
-    stage.show();
   }
 
   /**

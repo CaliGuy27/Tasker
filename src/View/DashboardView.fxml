@@ -9,8 +9,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" id="BorderPane" prefHeight="400.0" prefWidth="600.0" fx:controller="View.DashboardController">
-  <!--_______________________Project List_________________________________________-->
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashboardController">
   <left>
     <VBox alignment="TOP_CENTER">
       <Button fx:id="addProjectBtn" onAction="#showAddProjectModal" text="Add Project" minWidth="150">
@@ -23,105 +22,114 @@
       <ListView fx:id="projectList" minWidth="200" minHeight="500" onMouseClicked="#updateProjectProgress" ></ListView>
     </VBox>
   </left>
-  <!--______________________________End Project List_____________________________-->
   <center>
-    <!--_______________________Project Progress Percentage_______________________-->
-    <VBox fx:id="progressSection"  alignment="TOP_CENTER">
-      <Label fx:id="projectNameLabel" text="Project Name"></Label>
-      <Button fx:id="jobNumButton" text="Project Number">
-        <VBox.margin>
-          <Insets>
-            <bottom>10</bottom>
-          </Insets>
-        </VBox.margin>
-      </Button>
-      <HBox alignment="TOP_CENTER">
-        <VBox minWidth="200" maxWidth="250" minHeight="150" maxHeight="200" styleClass="blackRoundedBorder">
-          <HBox.margin>
-            <Insets>
-              <left>20</left>
-              <right>20</right>
-            </Insets>
-          </HBox.margin>
-          <ImageView fx:id="deImage"></ImageView>
-        </VBox >
-        <VBox minWidth="200" maxWidth="250" minHeight="150" maxHeight="200" styleClass="blackRoundedBorder">
-          <ImageView fx:id="seImage"></ImageView>
-        </VBox>
-      </HBox>
-      <Accordion maxWidth="700">
-        <VBox.margin>
-          <Insets>
-            <top>30</top>
-          </Insets>
-        </VBox.margin>
-        <panes>
-          <!--Design TitlePane-->
-          <TitledPane fx:id="designTP" text="Design">
-            <content>
-              <HBox fx:id="designRow" alignment="CENTER">
-                <VBox alignment="CENTER">
-                  <ProgressIndicator fx:id="schedInd" progress="0"></ProgressIndicator>
-                  <Button fx:id="scheduleBtn" text="Schedules" onAction="#setProgress"></Button>
-                </VBox>
-                <VBox alignment="CENTER">
-                  <ProgressIndicator fx:id="dwgInd" progress="0"></ProgressIndicator>
-                  <Button fx:id="drawingBtn" text="Control Drawings" onAction="#setProgress"></Button>
+    <ScrollPane vbarPolicy="ALWAYS" hbarPolicy="NEVER" fitToHeight="true" fitToWidth="true" id="#noBackground"  >
+      <content> 
+        <!--_______________________Project List_________________________________________-->
+        <BorderPane>
+          <!--______________________________End Project List_____________________________-->
+          <center>
+            <!--_______________________Project Progress Percentage_______________________-->
+            <VBox fx:id="progressSection" alignment="TOP_CENTER">
+              <Label fx:id="projectNameLabel" text="Project Name"></Label>
+              <Button fx:id="jobNumButton" text="Project Number">
+                <VBox.margin>
+                  <Insets>
+                    <bottom>10</bottom>
+                  </Insets>
+                </VBox.margin>
+              </Button>
+              <HBox alignment="TOP_CENTER">
+                <VBox minWidth="200" maxWidth="250" minHeight="150" maxHeight="200" styleClass="blackRoundedBorder">
                   <HBox.margin>
                     <Insets>
-                      <left>15</left>
-                      <right>15</right>
+                      <left>20</left>
+                      <right>20</right>
                     </Insets>
                   </HBox.margin>
-                </VBox>
-                <VBox alignment="CENTER">
-                  <ProgressIndicator fx:id="manualInd" progress="0"></ProgressIndicator>
-                  <Button fx:id="manualBtn" text="Manuals" onAction="#setProgress"></Button>
-                </VBox>
-              </HBox>
-            </content>
-          </TitledPane>
-          <!--Software TitlePane-->
-          <TitledPane fx:id="softwareTP" text="Software">
-            <content>
-              <HBox fx:id="softwareRow" alignment="CENTER">
-                <VBox alignment="CENTER">
-                  <ProgressIndicator fx:id="dbInd" progress="0" ></ProgressIndicator>
-                  <Button fx:id="databaseBtn" text="Database" onAction="#setProgress"></Button>
-                </VBox>
-                <VBox alignment="CENTER">
-                  <ProgressIndicator fx:id="gfxInd" progress="0" ></ProgressIndicator>
-                  <Button fx:id="graphicsBtn" text="Graphics" onAction="#setProgress"></Button>
-                  <HBox.margin>
-                    <Insets>
-                      <left>15</left>
-                      <right>15</right>
-                    </Insets>
-                  </HBox.margin>
-                </VBox>
-                <VBox alignment="CENTER">
-                  <ProgressIndicator fx:id="programInd" progress="0" ></ProgressIndicator>
-                  <Button fx:id="programBtn" text="Programming" onAction="#setProgress"></Button>
+                  <ImageView fx:id="deImage"></ImageView>
+                </VBox >
+                <VBox minWidth="200" maxWidth="250" minHeight="150" maxHeight="200" styleClass="blackRoundedBorder">
+                  <ImageView fx:id="seImage"></ImageView>
                 </VBox>
               </HBox>
-            </content>
-          </TitledPane>
-          <!--Notes-->
-          <TitledPane text="Notes">
-            <content>
-              <TextArea fx:id="projectNotes" wrapText="true"></TextArea>
-            </content>
-          </TitledPane>
-          <!--Request For Information-->
-          <TitledPane text="R.F.I.'s">
-            <content>
-              <VBox>
-              </VBox>
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>   
-    </VBox>
-    <!--_______________________Project Progress Percentage End_________________________________________-->
+              <Accordion maxWidth="700">
+                <VBox.margin>
+                  <Insets>
+                    <top>30</top>
+                  </Insets>
+                </VBox.margin>
+                <panes>
+                  <!--Design TitlePane-->
+                  <TitledPane fx:id="designTP" text="Design">
+                    <content>
+                      <HBox fx:id="designRow" alignment="CENTER">
+                        <VBox alignment="CENTER">
+                          <ProgressIndicator fx:id="schedInd" progress="0"></ProgressIndicator>
+                          <Button fx:id="scheduleBtn" text="Schedules" onAction="#setProgress"></Button>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                          <ProgressIndicator fx:id="dwgInd" progress="0"></ProgressIndicator>
+                          <Button fx:id="drawingBtn" text="Control Drawings" onAction="#setProgress"></Button>
+                          <HBox.margin>
+                            <Insets>
+                              <left>15</left>
+                              <right>15</right>
+                            </Insets>
+                          </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                          <ProgressIndicator fx:id="manualInd" progress="0"></ProgressIndicator>
+                          <Button fx:id="manualBtn" text="Manuals" onAction="#setProgress"></Button>
+                        </VBox>
+                      </HBox>
+                    </content>
+                  </TitledPane>
+                  <!--Software TitlePane-->
+                  <TitledPane fx:id="softwareTP" text="Software">
+                    <content>
+                      <HBox fx:id="softwareRow" alignment="CENTER">
+                        <VBox alignment="CENTER">
+                          <ProgressIndicator fx:id="dbInd" progress="0" ></ProgressIndicator>
+                          <Button fx:id="databaseBtn" text="Database" onAction="#setProgress"></Button>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                          <ProgressIndicator fx:id="gfxInd" progress="0" ></ProgressIndicator>
+                          <Button fx:id="graphicsBtn" text="Graphics" onAction="#setProgress"></Button>
+                          <HBox.margin>
+                            <Insets>
+                              <left>15</left>
+                              <right>15</right>
+                            </Insets>
+                          </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                          <ProgressIndicator fx:id="programInd" progress="0" ></ProgressIndicator>
+                          <Button fx:id="programBtn" text="Programming" onAction="#setProgress"></Button>
+                        </VBox>
+                      </HBox>
+                    </content>
+                  </TitledPane>
+                  <!--Notes-->
+                  <TitledPane text="Notes">
+                    <content>
+                      <TextArea fx:id="projectNotes" wrapText="true"></TextArea>
+                    </content>
+                  </TitledPane>
+                  <!--Request For Information-->
+                  <TitledPane text="R.F.I.'s">
+                    <content>
+                      <VBox>
+                      </VBox>
+                    </content>
+                  </TitledPane>
+                </panes>
+              </Accordion>   
+            </VBox>
+            <!--_______________________Project Progress Percentage End_________________________________________-->
+          </center>
+        </BorderPane>
+      </content>
+    </ScrollPane>
   </center>
 </BorderPane>

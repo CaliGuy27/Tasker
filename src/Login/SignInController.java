@@ -95,6 +95,7 @@ public class SignInController implements Initializable
         if(database.checkPassword(getEmail(), getPassword()))
         {
           tasker.signInToApp();
+          
           clearAllFields();
         }
     }catch(IOException io)

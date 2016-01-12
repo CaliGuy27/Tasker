@@ -6,8 +6,6 @@
 package View;
 
 import Login.SignInController;
-import View.DashboardController;
-import View.TweetController;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,11 +18,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import twitter4j.TwitterException;
 
 /**
@@ -52,6 +53,8 @@ public class TaskerController implements Initializable {
   DashboardController dashController;
   TweetController tweetController;
 
+  Stage mainStage;
+  Stage loginDialog;
   BorderPane twitterPane;
   BorderPane dashBoard;
   VBox login;
@@ -93,6 +96,7 @@ public class TaskerController implements Initializable {
 
       //open a stream to the SignInView class and assign it to a layout
       login = loader.load(location.openStream());
+      
       //reference to SignInController Class
       signInController = loader.getController();
       //send a reference of this class to the signInController
@@ -101,7 +105,13 @@ public class TaskerController implements Initializable {
       Logger.getLogger(TaskerController.class.getName()).log(Level.SEVERE, null, ex);
     } catch (IOException ex) {
       Logger.getLogger(TaskerController.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    }//end method initialize
+    
+    loginDialog = new Stage();
+    loginDialog.setScene(new Scene(login));
+    loginDialog.setWidth(300);
+    loginDialog.setHeight(300);
+    
     container.setLeft(null);
     socialMenu.setDisable(true);
     try {
@@ -126,7 +136,9 @@ public class TaskerController implements Initializable {
 
     container.setLeft(null);
     //place layout in the center of the application
-    container.setCenter(login);
+    //container.setCenter(login);
+    
+    loginDialog.show();
     //make it seem as though there is no focus given 
     Platform.runLater(() -> container.requestFocus());
   }//end method showLogin
@@ -135,7 +147,11 @@ public class TaskerController implements Initializable {
   public void showDashboard() throws IOException {
     //send a reference of this class to the DashboardController
     dashController.setTaskerReference(this);
-
+    
+    mainStage = (Stage)container.getScene().getWindow();
+    mainStage.show();
+    loginDialog.hide();
+    
     //place layout in the center of the application
     container.setCenter(dashBoard);
   }//end method showDashboard
@@ -162,6 +178,7 @@ public class TaskerController implements Initializable {
   }//end method minimizeTweetTab
 
   //Methods for main application properties------------------------>
+  
   //set the value for the Full Name label
   public void setFullNameLabel(String fullName) {
     fullNameLabel.setText(fullName);

@@ -37,6 +37,8 @@ public class DashboardController implements Initializable {
   @FXML private Button addProjectBtn;
   @FXML private HBox projectSection;
   @FXML private VBox progressSection;
+  @FXML private Label projectNameLabel;
+  @FXML private Button jobNumButton;
 
   @FXML private TitledPane designTP;
   @FXML private HBox designRow;
@@ -81,9 +83,9 @@ public class DashboardController implements Initializable {
       projectLoader.load(location.openStream());
       //set reference to the NewProjectController Class
       projectController = projectLoader.getController();
-      projectController.DashboardReference(this);
+      projectController.dashboardReference(this);
 
-      projectList.setOnMouseClicked(e -> updateProjectProgress());
+      projectList.setOnMouseClicked(e ->updateProjectProgress());
       designTP.setOnMouseClicked(e->designTP.setContent(designRow));
       softwareTP.setOnMouseClicked(e->softwareTP.setContent(softwareRow));
     } catch (IOException io) {}
@@ -91,24 +93,28 @@ public class DashboardController implements Initializable {
 
   public void setTaskerReference(TaskerController controller) throws IOException {
     tasker = controller;
-  }
+  }//end method setTaskerReference
 
   @FXML
   public void showAddProjectModal() {
     projectController.showModal();
-  }
+  }//end method showAddProjectModal
 
   @FXML
   public void updateProjectProgress() {
+    //get project information from the item selected in the list
     project = (Project) projectList.getSelectionModel().getSelectedItem();
-
+    
+    //update the project name, job number, and task progress
+    projectNameLabel.setText(project.getProjectName());
+    jobNumButton.setText(project.getProjectNumber());
     schedInd.setProgress((project.getScheduleStatus()));
     dwgInd.setProgress(project.getDrawingStatus());
     manualInd.setProgress(project.getManualStatus());
     dbInd.setProgress(project.getDatabaseStatus());
     gfxInd.setProgress(project.getGraphicsStatus());
     programInd.setProgress(project.getProgramStatus());
-  }
+  }//end method updateProjectProgress
   
   @FXML
   public void setProgress(){
@@ -308,10 +314,10 @@ public class DashboardController implements Initializable {
         softwareTP.setContent(softwareRow);
       });
     }
-  }
+  }//end method setProgress
 
   public void addProjectToList(Project p) {
     project = p;
     projectList.getItems().add(p);
-  }
-}
+  }//end method addProjectToList
+}//end class DashboardController

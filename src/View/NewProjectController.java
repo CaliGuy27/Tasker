@@ -28,28 +28,17 @@ public class NewProjectController implements Initializable {
 
   //GUI
   private Stage modal;
-  private @FXML
-  VBox container;
-  private @FXML
-  TextField pNameTF;
-  private @FXML
-  TextField pNumberTF;
-  private @FXML
-  ComboBox dEngineerCB;
-  private @FXML
-  ComboBox sEngineerCB;
-  private @FXML
-  TextField scheduleStatusTF;
-  private @FXML
-  TextField drawingStatusTF;
-  private @FXML
-  TextField manualStatusTF;
-  private @FXML
-  TextField databaseStatusTF;
-  private @FXML
-  TextField graphicsStatusTF;
-  private @FXML
-  TextField programStatusTF;
+  private @FXML VBox container;
+  private @FXML TextField pNameTF;
+  private @FXML TextField pNumberTF;
+  private @FXML ComboBox dEngineerCB;
+  private @FXML ComboBox sEngineerCB;
+  private @FXML TextField scheduleStatusTF;
+  private @FXML TextField drawingStatusTF;
+  private @FXML TextField manualStatusTF;
+  private @FXML TextField databaseStatusTF;
+  private @FXML TextField graphicsStatusTF;
+  private @FXML TextField programStatusTF;
 
   //Controllers
   DashboardController dash;
@@ -65,11 +54,11 @@ public class NewProjectController implements Initializable {
     
     dEngineerCB.getItems().addAll("Christian Omphroy");
     sEngineerCB.getItems().addAll("Marquis Butler");
-  }
+  }//end method initialize
   
-  public void DashboardReference(DashboardController controller) throws IOException {
+  public void dashboardReference(DashboardController controller) throws IOException {
     dash = controller;
-  }
+  }//end method dashboardReference
   
   @FXML  
   public void showModal() {
@@ -105,7 +94,7 @@ public class NewProjectController implements Initializable {
     clearAllFields();
     //exit modal when done
     hideModal();
-  }
+  }//end method createProject
   
   public void clearAllFields() {
     pNameTF.setText("");
@@ -118,6 +107,5 @@ public class NewProjectController implements Initializable {
     databaseStatusTF.setText("");
     graphicsStatusTF.setText("");
     programStatusTF.setText("");
-    
-  }
-}
+  }//end method clearAllFields
+}//end class NewProjectController
