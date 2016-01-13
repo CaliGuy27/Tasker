@@ -11,19 +11,39 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DashboardController">
   <left>
-    <VBox alignment="TOP_CENTER">
-      <Button fx:id="addProjectBtn" onAction="#showAddProjectModal" text="Add Project" minWidth="150">
-        <VBox.margin>
-          <Insets>
-            <bottom>15</bottom>
-          </Insets>
-        </VBox.margin>
-      </Button>
-      <ListView fx:id="projectList" minWidth="200" minHeight="500" onMouseClicked="#updateProjectProgress" ></ListView>
+    <VBox id="myGray" maxWidth="200">
+      <VBox>
+        <TextField fx:id="fullNameTextField" text="Marquis Butler" styleClass="seeThrough" id="myMediumText"  
+                     editable="false" minWidth="75" maxWidth="300"  alignment="BOTTOM_LEFT">
+          <VBox.margin>
+            <Insets>
+              <bottom>-20</bottom>
+            </Insets>
+          </VBox.margin>
+        </TextField>
+        <TextField fx:id="positionTextField" text="Software Engineer" styleClass="seeThrough" id="mySmallText"
+                     editable="false" minWidth="75" maxWidth="300" alignment="BOTTOM_LEFT">
+        </TextField>
+      </VBox>
+      <VBox alignment="CENTER">
+        <VBox alignment="TOP_CENTER" styleClass="myLightGray">
+          <Button fx:id="addProjectBtn" onAction="#showAddProjectModal" text="Add Project" prefWidth="80" prefHeight="30">
+            <VBox.margin>
+              <Insets>
+                <top>15</top>
+                <bottom>15</bottom>
+              </Insets>
+            </VBox.margin>
+          </Button>
+        </VBox>
+        <VBox alignment="TOP_CENTER">
+          <ListView fx:id="projectList" minWidth="75" onMouseClicked="#updateProjectProgress" id="myList" styleClass="seeThrough"></ListView>
+        </VBox>
+      </VBox>
     </VBox>
   </left>
   <center>
-    <ScrollPane vbarPolicy="ALWAYS" hbarPolicy="NEVER" fitToHeight="true" fitToWidth="true" id="#noBackground"  >
+    <ScrollPane vbarPolicy="ALWAYS" hbarPolicy="ALWAYS" fitToHeight="true" fitToWidth="true" styleClass="noBackground"  >
       <content> 
         <!--_______________________Project List_________________________________________-->
         <BorderPane>
@@ -47,10 +67,18 @@
                       <right>20</right>
                     </Insets>
                   </HBox.margin>
-                  <ImageView fx:id="deImage"></ImageView>
+                  <ImageView fx:id="deImage" preserveRatio="true"  fitWidth="198">
+                    <image>
+                      <Image url="/images/male_avi.png"></Image>
+                    </image>
+                  </ImageView>
                 </VBox >
                 <VBox minWidth="200" maxWidth="250" minHeight="150" maxHeight="200" styleClass="blackRoundedBorder">
-                  <ImageView fx:id="seImage"></ImageView>
+                  <ImageView fx:id="seImage" preserveRatio="true"  fitWidth="198">
+                    <image>
+                      <Image url="/images/male_avi.png"></Image>
+                    </image>
+                  </ImageView>
                 </VBox>
               </HBox>
               <Accordion maxWidth="700">

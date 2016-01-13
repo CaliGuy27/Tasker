@@ -41,12 +41,6 @@
         </Menu>
       </MenuBar>
       <!--______________________________End Menu Bar_____________________________-->
-      <AnchorPane>
-        <VBox alignment="CENTER" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="15" maxWidth="100" >
-          <Label fx:id="fullNameLabel" text=""></Label>
-          <Label fx:id="positionLabel" text=""></Label>
-        </VBox>
-      </AnchorPane>
     </VBox>
   </top>
 </BorderPane>

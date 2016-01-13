@@ -70,9 +70,9 @@
     <!--_______________________________Design Section_____________________________-->
     <Label text="What is the status of the Design?"></Label>
     <HBox>
-      <TextField fx:id="scheduleStatusTF" promptText="Scehdule Percentage"></TextField>
-      <TextField fx:id="drawingStatusTF" promptText="Control Drawings Percentage"></TextField>
-      <TextField fx:id="manualStatusTF" promptText="Manual Percentage"></TextField>
+      <TextField fx:id="scheduleStatusTF" promptText="Scehdule %"></TextField>
+      <TextField fx:id="drawingStatusTF" promptText="Drawings %"></TextField>
+      <TextField fx:id="manualStatusTF" promptText="Manual %"></TextField>
     </HBox>
     <!--__________________________End Design Section__________________________-->
     <Separator>
@@ -86,9 +86,9 @@
     <!--__________________________Software Section______________________________-->
     <Label text="What is the status of the Software?"></Label>
     <HBox>
-      <TextField fx:id="databaseStatusTF" promptText="Database"></TextField>
-      <TextField fx:id="graphicsStatusTF" promptText="Graphics"></TextField>
-      <TextField fx:id="programStatusTF" promptText="Programming"></TextField>
+      <TextField fx:id="databaseStatusTF" promptText="Database %"></TextField>
+      <TextField fx:id="graphicsStatusTF" promptText="Graphics %"></TextField>
+      <TextField fx:id="programStatusTF" promptText="Programming %"></TextField>
     </HBox>
     <!--__________________________End Spftware Section_________________________-->
   </VBox>

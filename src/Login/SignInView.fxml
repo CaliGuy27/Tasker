@@ -11,8 +11,7 @@
 <VBox fx:id="parent" maxHeight="320.0" maxWidth="300.0"  
       styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.SignInController">
   
-  <VBox fx:id="signIn" id="signIn" alignment="TOP_CENTER" >
-    
+  <VBox fx:id="signIn" id="signIn" alignment="TOP_CENTER">
     <Label text="Tasker" styleClass="header"></Label>
     <VBox styleClass="blackRoundedBorder" alignment="CENTER" maxWidth="190" >
       <VBox.margin>
@@ -20,8 +19,8 @@
           <bottom>10</bottom>
         </Insets>
       </VBox.margin>
-      <TextField fx:id="emailTF" promptText="Email" maxWidth="190" id="topTextField"></TextField>
-      <PasswordField fx:id="passwordTF" promptText="Password" maxWidth="190" id="bottomTextField"></PasswordField>
+      <TextField fx:id="emailTF" promptText="Email" maxWidth="190" text="mbutler@sunbeltcontrols.com"></TextField>
+      <PasswordField fx:id="passwordTF" promptText="Password" maxWidth="190" id="bottomTextField" text="yoyoyo111"></PasswordField>
     </VBox>
     <Button text="Sign In" fx:id="signInBtn" onAction="#signIn" minWidth="190" styleClass="blackRoundedBorder, whiteRoundedBackground">
       <VBox.margin>

@@ -101,19 +101,23 @@ public class DashboardController implements Initializable {
   }//end method showAddProjectModal
 
   @FXML
-  public void updateProjectProgress() {
-    //get project information from the item selected in the list
-    project = (Project) projectList.getSelectionModel().getSelectedItem();
-    
-    //update the project name, job number, and task progress
-    projectNameLabel.setText(project.getProjectName());
-    jobNumButton.setText(project.getProjectNumber());
-    schedInd.setProgress((project.getScheduleStatus()));
-    dwgInd.setProgress(project.getDrawingStatus());
-    manualInd.setProgress(project.getManualStatus());
-    dbInd.setProgress(project.getDatabaseStatus());
-    gfxInd.setProgress(project.getGraphicsStatus());
-    programInd.setProgress(project.getProgramStatus());
+  public void updateProjectProgress() 
+  {
+    if (!projectList.getItems().isEmpty()) 
+    {
+      //get project information from the item selected in the list
+      project = (Project) projectList.getSelectionModel().getSelectedItem();
+
+      //update the project name, job number, and task progress
+      projectNameLabel.setText(project.getProjectName());
+      jobNumButton.setText(project.getProjectNumber());
+      schedInd.setProgress((project.getScheduleStatus()));
+      dwgInd.setProgress(project.getDrawingStatus());
+      manualInd.setProgress(project.getManualStatus());
+      dbInd.setProgress(project.getDatabaseStatus());
+      gfxInd.setProgress(project.getGraphicsStatus());
+      programInd.setProgress(project.getProgramStatus());
+    }
   }//end method updateProjectProgress
   
   @FXML
@@ -316,8 +320,9 @@ public class DashboardController implements Initializable {
     }
   }//end method setProgress
 
-  public void addProjectToList(Project p) {
-    project = p;
-    projectList.getItems().add(p);
+  public void addProjectToList(Project p) 
+  {
+      project = p;
+      projectList.getItems().add(p);
   }//end method addProjectToList
 }//end class DashboardController
